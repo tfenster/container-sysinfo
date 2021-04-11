@@ -38,11 +38,7 @@ jobs:
           
           for ($j=0; $j -lt $targets.length; $j++){
             $currImage = "$($currBaseImage)-$($targets[$j])"
-            $versionBuildArg = ""
-            if ($dockerfiles[$i].IndexOf(".dev.") -eq -1) {
-              $versionBuildArg = "--build-arg VERSION=$($version)"
-            }
-            $buildCmd = "docker build -t $($currImage) -f $($dockerfiles[$i]) --build-arg BASE=$($targets[$j]) --isolation hyperv $versionBuildArg ."
+            $buildCmd = "docker build -t $($currImage) -f $($dockerfiles[$i]) --build-arg BASE=$($targets[$j]) --isolation hyperv ."
             $buildCmds.Add($buildCmd)
 
             $imgPushCmd = "docker push $($currImage)"

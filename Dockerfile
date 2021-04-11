@@ -1,6 +1,6 @@
 # escape=`
 ARG BASE
-FROM mcr.microsoft.com/dotnet/sdk:6.0-nanoserver-2004 AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0-nanoserver-${BASE} AS build
 
 WORKDIR /src
 
@@ -12,7 +12,7 @@ USER ContainerAdministrator
 RUN dotnet build "container-sysinfo.csproj" -c Release -o /app/build
 RUN dotnet publish "container-sysinfo.csproj" -c Release -o /app/publish
 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0-nanoserver-2004 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:6.0-nanoserver-${BASE} AS final
 EXPOSE 80
 
 WORKDIR /app

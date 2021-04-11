@@ -27,7 +27,7 @@ jobs:
     - name: Set up commands
       run: |
         $images = @("container-sysinfo:dev$env:branch")
-        $targets = @("1809", "2004", "20H2")
+        $targets = @("1809", "2004")
         $dockerfiles = @("Dockerfile")
 
         $buildCmds = New-Object System.Collections.Generic.List[System.String]

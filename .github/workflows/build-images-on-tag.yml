@@ -22,7 +22,7 @@ jobs:
     - name: Set up commands
       run: |
         $version = ((Invoke-Expression "git describe --abbrev=0 --tags").Substring(1))
-        $images = @("container-sysinfo")
+        $images = @("container-sysinfo:")
         $targets = @("1809", "2004")
         $dockerfiles = @("Dockerfile")
 

@@ -23,7 +23,7 @@ jobs:
       run: |
         $version = ((Invoke-Expression "git describe --abbrev=0 --tags").Substring(1))
         $images = @("container-sysinfo:")
-        $targets = @("1809", "2004")
+        $targets = @("1809", "2004", "ltsc2022")
         $dockerfiles = @("Dockerfile")
 
         $buildCmds = New-Object System.Collections.Generic.List[System.String]

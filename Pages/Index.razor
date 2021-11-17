@@ -1,7 +1,7 @@
 @page "/"
 
-<h1>Hello, <img src="https://globalazure.net/images/GlobalAzure2021-145.png" /></h1>
+<h1>Hello, @Environment.GetEnvironmentVariable("DisplayName")</h1>
 
-Welcome to your new app in <b>v5.0.0</b>.
+Welcome to your new app in <b>v6.0.0</b>.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
